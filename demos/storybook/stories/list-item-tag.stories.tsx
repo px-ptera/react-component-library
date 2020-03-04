@@ -13,6 +13,7 @@ stories.addParameters({
     options: {
         showPanel: true,
     },
+   notes: { markdown: require('./../../../docs/ListItemTag.md') }
 });
 
 stories.add('with different colors', () => (

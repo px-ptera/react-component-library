@@ -2,12 +2,11 @@ import { Button, createStyles, makeStyles, Typography } from '@material-ui/core'
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import { appliedTheme } from '../.storybook/config';
-import { storyWrapper } from '../src/util';
+import {hideTopBanner} from '../src/util';
 import * as Colors from '@pxblue/colors';
 const backgroundImage = require('../assets/circles-bg.svg');
 
 export const stories = storiesOf('Intro/Welcome', module);
-stories.addDecorator(storyWrapper);
 
 const useStyles = makeStyles(() =>
     createStyles({
@@ -70,9 +69,21 @@ stories.addParameters({
     },
 });
 
+const goToCanvas = (): void => {
+   // If we are currently on the 'Notes' tab.
+   if (window.top.location.href.includes('/info/')) {
+      window.top.history.replaceState(null, '', window.top.location.href.replace('/info/', '/story/'));
+      //@ts-ignore
+      const banner = window.top.document.getElementsByClassName('simplebar-content')[1];
+      banner.children[0].children[0].children[0].children[0].click(); // Click the 'Canvas' button
+   }
+};
+
 stories.add('to pxblue', () => {
     const classes = useStyles();
     const icon = require('../assets/pxb-icon.svg');
+    hideTopBanner();
+    goToCanvas();
     return (
         <div className={classes.root}>
             <div className={classes.container}>

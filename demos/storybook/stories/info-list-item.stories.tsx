@@ -14,6 +14,7 @@ stories.addParameters({
     options: {
         showPanel: true,
     },
+   notes: { markdown: require('./../../../docs/InfoListItem.md') }
 });
 
 stories.add('basic list item', () => (

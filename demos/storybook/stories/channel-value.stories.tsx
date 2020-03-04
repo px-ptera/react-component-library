@@ -12,6 +12,7 @@ stories.addParameters({
     options: {
         showPanel: true,
     },
+   notes: { markdown: require('./../../../docs/ChannelValue.md') }
 });
 
 stories.add(

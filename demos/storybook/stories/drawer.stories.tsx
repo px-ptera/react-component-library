@@ -52,6 +52,7 @@ stories.addParameters({
     options: {
         showPanel: true,
     },
+    notes: { markdown: require('./../../../docs/Drawer.md') }
 });
 
 type DrawerState = {

@@ -1,14 +1,16 @@
 import React from 'react';
 
-export const storyWrapper = (storyFn: any) => {
+const setBannerStyle = (display: string): void => {
     const banner = window.top.document.getElementsByClassName('simplebar-content')[1];
-    banner.setAttribute('style', 'display: unset');
+    banner.setAttribute('style', `display: ${display}`);
+};
 
-    // If we are currently on the 'Notes' tab.
-    if (window.top.location.href.includes('/info/')) {
-        window.top.history.replaceState(null, '', window.top.location.href.replace('/info/', '/story/'));
-        //@ts-ignore
-        banner.children[0].children[0].children[0].children[0].click(); // Click the 'Canvas' button
-    }
+export const hideTopBanner = (): void => {
+    setBannerStyle('none');
+};
+
+export const storyWrapper = (storyFn: any): any => {
+    setBannerStyle('unset');
+    //TODO: Maybe auto-navigate users to the canvas when they switch stories when they are on the Notes tab.
     return <>{storyFn()}</>;
 };

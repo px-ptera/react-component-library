@@ -14,6 +14,7 @@ stories.addParameters({
     options: {
         showPanel: true,
     },
+    notes: { markdown: require('./../../../docs/Hero.md') }
 });
 
 const heroes = [

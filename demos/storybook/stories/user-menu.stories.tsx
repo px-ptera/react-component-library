@@ -18,6 +18,7 @@ stories.addParameters({
     options: {
         showPanel: true,
     },
+   notes: { markdown: require('./../../../docs/UserMenu.md') }
 });
 
 const defaultMenuItems: UserMenuGroup[] = [

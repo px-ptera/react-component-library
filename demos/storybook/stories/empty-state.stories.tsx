@@ -17,6 +17,7 @@ stories.addParameters({
     options: {
         showPanel: true,
     },
+   notes: { markdown: require('./../../../docs/EmptyState.md') }
 });
 
 stories.add('with actions', () => {

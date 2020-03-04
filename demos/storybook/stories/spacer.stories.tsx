@@ -12,6 +12,7 @@ stories.addParameters({
     options: {
         showPanel: true,
     },
+    notes: { markdown: require('./../../../docs/Spacer.md') }
 });
 
 stories.add('flex layout', () => {

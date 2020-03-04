@@ -15,6 +15,7 @@ stories.addParameters({
     options: {
         showPanel: true,
     },
+   notes: { markdown: require('./../../../docs/Hero.md') }
 });
 
 stories.add('with basic properties', () => (
